@@ -35,6 +35,7 @@ import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight'
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft'
 import MoreHorizRoundedIcon from '@mui/icons-material/MoreHorizRounded'
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline'
+import { ModalEditDonate } from '../components/ModalEditDonation'
 const rows = [
     {
         id: '#1',
@@ -94,23 +95,29 @@ function getComparator<Key extends keyof any>(
 }
 
 function RowMenu() {
+    const [openEditModal, setOpenopenEditModal] = React.useState(false) // Estado para controlar o modal
     return (
-        <Dropdown>
-            <MenuButton
-                slots={{ root: IconButton }}
-                slotProps={{ root: { variant: 'plain', color: 'neutral', size: 'sm' } }}
-            >
-                <MoreHorizRoundedIcon />
-            </MenuButton>
-            <Menu size="sm" sx={{ minWidth: 140 }}>
-                <MenuItem>Editar</MenuItem>
-                <Divider />
-                <MenuItem color="danger">Deletar</MenuItem>
-            </Menu>
-        </Dropdown>
+        <>
+            <Dropdown>
+                <MenuButton
+                    slots={{ root: IconButton }}
+                    slotProps={{ root: { variant: 'plain', color: 'neutral', size: 'sm' } }}
+                >
+                    <MoreHorizRoundedIcon />
+                </MenuButton>
+                <Menu size="sm" sx={{ minWidth: 140 }}>
+                    <MenuItem onClick={() => setOpenopenEditModal(true)}>Editar</MenuItem>
+                    <Divider />
+                    <MenuItem color="danger">Deletar</MenuItem>
+                </Menu>
+            </Dropdown>
+            <ModalEditDonate open={openEditModal} setOpen={setOpenopenEditModal} />
+        </>
     )
 }
+
 export default function DonationTable() {
+
     const [order, setOrder] = React.useState<Order>('desc')
     const [selected, setSelected] = React.useState<readonly string[]>([])
     const [open, setOpen] = React.useState(false)
@@ -386,6 +393,7 @@ export default function DonationTable() {
                 >
                     Next
                 </Button>
+
             </Box>
         </React.Fragment>
     )

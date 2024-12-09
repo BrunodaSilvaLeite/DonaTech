@@ -37,7 +37,7 @@ export default function HeroLeft01() {
                     transform: 'translateX(-50%)',
                 }}
             >
-                HeroLeft01
+
             </Typography>
         </TwoSidedLayout>
     )

@@ -13,8 +13,11 @@ import { Button } from '@mui/joy'
 import OrderList from '../../components/OrderList'
 
 
+
 export default function JoyOrderDashboardTemplate() {
     const [open, setOpen] = React.useState(false) // Estado para controlar o modal
+
+
     return (
         <CssVarsProvider disableTransitionOnChange>
             <CssBaseline />
@@ -107,6 +110,7 @@ export default function JoyOrderDashboardTemplate() {
                 <OrderList />
                 {/* Renderiza o modal */}
                 <BasicModalDialog open={open} setOpen={setOpen} />
+
             </Box>
 
         </CssVarsProvider>

@@ -154,7 +154,7 @@ export default function Sidebar() {
                         >
                             <QuestionAnswerRoundedIcon />
                             <ListItemContent>
-                                <Typography level="title-sm">Messages</Typography>
+                                <Typography level="title-sm">Mensagens</Typography>
                             </ListItemContent>
                             <Chip size="sm" color="primary" variant="solid">
                                 1
