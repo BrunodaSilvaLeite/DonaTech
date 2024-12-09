@@ -30,7 +30,7 @@ import SearchIcon from '@mui/icons-material/Search'
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown'
 import CheckRoundedIcon from '@mui/icons-material/CheckRounded'
 import BlockIcon from '@mui/icons-material/Block'
-import AutorenewRoundedIcon from '@mui/icons-material/AutorenewRounded'
+
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight'
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft'
 import MoreHorizRoundedIcon from '@mui/icons-material/MoreHorizRounded'
@@ -266,7 +266,7 @@ export default function DonationTable() {
                                 </Link>
                             </th>
                             <th style={{ width: 140, padding: '12px 6px' }}>Date</th>
-                            <th style={{ width: 140, padding: '12px 6px' }}>Title</th>
+                            <th style={{ width: 140, padding: '12px 6px' }}>Nome</th>
                             <th style={{ width: 140, padding: '12px 6px' }}>Status</th>
                             <th style={{ width: 240, padding: '12px 6px' }}>Descrição</th>
                             <th style={{ width: 240, padding: '12px 6px' }}>categoria</th>

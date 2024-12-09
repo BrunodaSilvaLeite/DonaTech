@@ -5,7 +5,7 @@ import Box from '@mui/joy/Box'
 import Breadcrumbs from '@mui/joy/Breadcrumbs'
 import Link from '@mui/joy/Link'
 import Typography from '@mui/joy/Typography'
-
+import BasicModalDialog from '../../components/Modal'
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded'
 import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded'
 import DonationTable from '../../components/DonationTable'
@@ -14,6 +14,7 @@ import OrderList from '../../components/OrderList'
 
 
 export default function JoyOrderDashboardTemplate() {
+    const [open, setOpen] = React.useState(false) // Estado para controlar o modal
     return (
         <CssVarsProvider disableTransitionOnChange>
             <CssBaseline />
@@ -97,12 +98,15 @@ export default function JoyOrderDashboardTemplate() {
                     <Button
                         color="primary"
                         size="sm"
+                        onClick={() => setOpen(true)}
                     >
                         Criar doação
                     </Button>
                 </Box>
                 <DonationTable />
                 <OrderList />
+                {/* Renderiza o modal */}
+                <BasicModalDialog open={open} setOpen={setOpen} />
             </Box>
 
         </CssVarsProvider>

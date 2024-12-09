@@ -29,9 +29,11 @@ import ComputerIcon from '@mui/icons-material/Computer'
 import ColorSchemeToggle from './ColorSchemeToggle'
 import { closeSidebar } from '../utils'
 import { Link } from 'react-router-dom'
+import BasicModalDialog from './Modal'
 
 
 export default function Sidebar() {
+    const [open, setOpen] = React.useState(false) // Estado para controlar o modal
     return (
         <Sheet
             className="Sidebar"
@@ -42,7 +44,7 @@ export default function Sidebar() {
                     md: 'none',
                 },
                 transition: 'transform 0.4s, width 0.4s',
-                zIndex: 10000,
+                zIndex: 9,
                 height: '100dvh',
                 width: 'var(--Sidebar-width)',
                 top: 0,
@@ -197,7 +199,7 @@ export default function Sidebar() {
                         Sua doação faz a diferença. Que tal contribuir agora?
                     </Typography>
                     <LinearProgress variant="outlined" value={80} determinate sx={{ my: 1 }} />
-                    <Button size="sm" variant="solid">
+                    <Button size="sm" variant="solid" onClick={() => setOpen(true)}>
                         Doar
                     </Button>
                 </Card>
@@ -216,6 +218,7 @@ export default function Sidebar() {
                 <IconButton size="sm" variant="plain" color="neutral">
                     <LogoutRoundedIcon />
                 </IconButton>
+                <BasicModalDialog open={open} setOpen={setOpen} />
             </Box>
         </Sheet>
     )

@@ -28,6 +28,7 @@ import InventoryIcon from '@mui/icons-material/Inventory'
 import { Link } from 'react-router-dom'
 import AddIcon from '@mui/icons-material/Add'
 import ComputerIcon from '@mui/icons-material/Computer'
+import BasicModalDialog from '../../components/Modal'
 
 export function AppLayout() {
 
@@ -142,23 +143,7 @@ export function AppLayout() {
                         <SearchRoundedIcon />
                     </IconButton>
                 </Stack>
-                <Box sx={{ display: { xs: 'inline-flex', sm: 'none' } }}>
-                    <IconButton variant="plain" color="neutral" onClick={() => setOpen(true)}>
-                        <MenuRoundedIcon />
-                    </IconButton>
-                    <Drawer
-                        sx={{ display: { xs: 'inline-flex', sm: 'none' } }}
-                        open={open}
-                        onClose={() => setOpen(false)}
-                    >
-                        <ModalClose />
-                        <DialogTitle>Acme Co.</DialogTitle>
-                        <Box sx={{ px: 1 }}>
-                            teste
-                        </Box>
-                    </Drawer>
 
-                </Box>
                 <Box
                     sx={{
                         display: 'flex',
@@ -171,7 +156,7 @@ export function AppLayout() {
                     <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                         <IconButton
 
-                            onClick={handleNavigateToCreateDonate}
+                            onClick={() => setOpen(true)}
 
 
                         >
@@ -236,6 +221,7 @@ export function AppLayout() {
                         </Menu>
                     </Dropdown>
                 </Box>
+                <BasicModalDialog open={open} setOpen={setOpen} />
             </Box>
 
             <Outlet />

@@ -23,7 +23,7 @@ import CardOverflow from '@mui/joy/CardOverflow'
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded'
 import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded'
 import EmailRoundedIcon from '@mui/icons-material/EmailRounded'
-import AccessTimeFilledRoundedIcon from '@mui/icons-material/AccessTimeFilledRounded'
+
 import ApartmentIcon from '@mui/icons-material/Apartment'
 import EditRoundedIcon from '@mui/icons-material/EditRounded'
 
